@@ -21,8 +21,26 @@ public class Location implements Serializable {
     private String east;
     private String south;
     private String west;
+    private String row;
+    private String column;
     
     public Location (){
+    }
+    
+    public String getRow() {
+        return row;
+    }
+    
+    public void setRow(String row) {
+        this.row = row;
+    }
+    
+    public String getColumn() {
+        return column;
+    }
+    
+    public void setColumn () {
+        this.column = column;
     }
 
     public String getRoom() {
