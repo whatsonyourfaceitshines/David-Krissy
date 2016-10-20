@@ -10,5 +10,9 @@ package byui.cit260.gladiator.control;
  * @author Krissy
  */
 public class BattleControl {
-    
+    public int characterHP (int armor){
+        return = characterHP;}
+    public int charaterAT (int weapon){}
+    public int damageToEnemy (int characterAT){}
+    public int damageToCharacter (int enemyAT){}
 }

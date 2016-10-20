@@ -10,5 +10,5 @@ package byui.cit260.gladiator.control;
  * @author Krissy
  */
 public class NPCControl {
-    
+    public void npcStateUpdate (void currentState);
 }

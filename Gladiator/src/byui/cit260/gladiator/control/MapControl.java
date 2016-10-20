@@ -10,5 +10,6 @@ package byui.cit260.gladiator.control;
  * @author Krissy
  */
 public class MapControl {
-    
+    public void move
+    public boolean validLocation (row, column);
 }
