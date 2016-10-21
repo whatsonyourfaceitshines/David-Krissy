@@ -76,9 +76,10 @@ public class BattleControlTest implements Serializable {
         int enemyAT = 1;
         int enemyWeapon = 2;
         int armor = 5;
+        int health = 10;
         BattleControl instance = new BattleControl();
-        int expResult = 02;
-        int result = instance.enemyDamage(enemyAT, enemyWeapon, armor);
+        int expResult = 8;
+        int result = instance.enemyDamage(enemyAT, enemyWeapon, armor, health);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         
