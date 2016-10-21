@@ -16,7 +16,7 @@ public class Game implements Serializable {
     // class instance variables
     private int mainQuestProgress;
     private int floorQuestProgress;
-    private int highestFloor;
+    private int activeFloor;
 
     public Game() {
     }
@@ -37,12 +37,12 @@ public class Game implements Serializable {
         this.floorQuestProgress = floorQuestProgress;
     }
 
-    public int getHighestFloor() {
-        return highestFloor;
+    public int getActiveFloor() {
+        return activeFloor;
     }
 
-    public void setHighestFloor(int highestFloor) {
-        this.highestFloor = highestFloor;
+    public void setActiveFloor(int activeFloor) {
+        this.activeFloor = activeFloor;
     }
 
     @Override
@@ -50,7 +50,7 @@ public class Game implements Serializable {
         int hash = 7;
         hash = 67 * hash + this.mainQuestProgress;
         hash = 67 * hash + this.floorQuestProgress;
-        hash = 67 * hash + this.highestFloor;
+        hash = 67 * hash + this.activeFloor;
         return hash;
     }
 
@@ -72,7 +72,7 @@ public class Game implements Serializable {
         if (this.floorQuestProgress != other.floorQuestProgress) {
             return false;
         }
-        if (this.highestFloor != other.highestFloor) {
+        if (this.activeFloor != other.activeFloor) {
             return false;
         }
         return true;
@@ -80,7 +80,7 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "mainQuestProgress=" + mainQuestProgress + ", floorQuestProgress=" + floorQuestProgress + ", highestFloor=" + highestFloor + '}';
+        return "Game{" + "mainQuestProgress=" + mainQuestProgress + ", floorQuestProgress=" + floorQuestProgress + ", activeFloor=" + activeFloor + '}';
     }
     
 }

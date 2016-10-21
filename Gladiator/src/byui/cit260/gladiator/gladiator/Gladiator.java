@@ -10,6 +10,7 @@ import byui.cit260.gladiator.model.Game;
 import byui.cit260.gladiator.model.Items;
 import byui.cit260.gladiator.model.Location;
 import byui.cit260.gladiator.model.NPC;
+import byui.cit260.gladiator.control.GameControl;
 
 /**
  *
@@ -33,7 +34,7 @@ public class Gladiator {
         
         gameVariables.setMainQuestProgress(4);
         gameVariables.setFloorQuestProgress(5);
-        gameVariables.setHighestFloor(6);
+        gameVariables.setActiveFloor(6);
         
         System.out.println(gameVariables.toString());
         
@@ -57,6 +58,55 @@ public class Gladiator {
         testItem.setMisc("Saxaphone");
         
         System.out.println(testItem.toString());
+        
+        // Test GameControl class
+        GameControl controlGame = new GameControl();
+        
+        // Test updateMQP function
+        int passMQP;
+        
+        passMQP = controlGame.updateMQP(gameVariables.getMainQuestProgress());
+        
+        gameVariables.setMainQuestProgress(passMQP);
+        
+        System.out.println(gameVariables.toString());
+        
+        // Test updateFQP function as well as FQP reset
+        int passFQP;
+        
+        passFQP = controlGame.updateFQP(gameVariables.getFloorQuestProgress());
+        
+        gameVariables.setFloorQuestProgress(passFQP);
+        
+        System.out.println(gameVariables.toString());
+        
+        gameVariables.setFloorQuestProgress(0);
+        
+        System.out.println(gameVariables.toString());
+        
+        // Test updateAF function
+        int passAF;
+        
+        passAF = controlGame.updateAF(gameVariables.getActiveFloor());
+        
+        gameVariables.setActiveFloor(passAF);
+        
+        System.out.println(gameVariables.toString());
+        
+        // Test saveGame function
+        CharacterInfo player = new CharacterInfo();
+        
+        // gameVariables is Game instance currently
+        
+        Items playerItems = new Items();
+        
+        Location playerLocation = new Location();
+        
+        NPC npcMark = new NPC();
+        
+        NPC npcJudy = new NPC();
+        
+        NPC npcDavid = new NPC();
     }
     
 }
