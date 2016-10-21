@@ -7,7 +7,7 @@ package byui.cit260.gladiator.control;
 
 import byui.cit260.gladiator.model.Game;
 import java.io.Serializable;
-import byui.cit260.gladiator.gladiator.Gladiator;
+import byui.cit260.gladiator.gladiator.Gladiator; //Why is this here?? ~Krissy
 
 /**
  *

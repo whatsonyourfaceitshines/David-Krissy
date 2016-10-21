@@ -5,10 +5,12 @@
  */
 package byui.cit260.gladiator.control;
 
+import java.io.Serializable;
+
 /**
  *
  * @author David
  */
-public class CharacterControl {
+public class CharacterControl implements Serializable{
 
 }

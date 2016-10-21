@@ -5,11 +5,13 @@
  */
 package byui.cit260.gladiator.control;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Krissy
  */
-public class MapControl {
+public class MapControl implements Serializable {
     public void move
     public boolean validLocation (row, column);
 }
