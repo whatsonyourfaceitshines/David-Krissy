@@ -5,7 +5,6 @@
  */
 package byui.cit260.gladiator.control;
 
-import java.io.Serializable;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -13,7 +12,7 @@ import static org.junit.Assert.*;
  *
  * @author Krissy
  */
-public class BattleControlTest implements Serializable {
+public class BattleControlTest {
     
     public BattleControlTest() {
     }
@@ -24,10 +23,10 @@ public class BattleControlTest implements Serializable {
     @Test
     public void testCharacterHP() {
         System.out.println("characterHP");
-        int armor = 5;
-        int baseHP = 10;
+        int armor = 0;
+        int baseHP = 0;
         BattleControl instance = new BattleControl();
-        int expResult = 15;
+        int expResult = 0;
         int result = instance.characterHP(armor, baseHP);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -40,10 +39,10 @@ public class BattleControlTest implements Serializable {
     @Test
     public void testCharaterAT() {
         System.out.println("charaterAT");
-        int weapon = 5;
-        int baseAT = 5;
+        int weapon = 0;
+        int baseAT = 0;
         BattleControl instance = new BattleControl();
-        int expResult = 10;
+        int expResult = 0;
         int result = instance.charaterAT(weapon, baseAT);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -56,30 +55,12 @@ public class BattleControlTest implements Serializable {
     @Test
     public void testDamageToEnemy() {
         System.out.println("damageToEnemy");
-        int characterAT = 5;
-        int weapon = 5;
-        int enemyArmor = 5;
+        int characterAT = 0;
+        int weapon = 0;
+        int enemyArmor = 0;
         BattleControl instance = new BattleControl();
-        int expResult = 5;
+        int expResult = 0;
         int result = instance.damageToEnemy(characterAT, weapon, enemyArmor);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        
-    }
-
-    /**
-     * Test of enemyDamage method, of class BattleControl.
-     */
-    @Test
-    public void testEnemyDamage() {
-        System.out.println("enemyDamage");
-        int enemyAT = 1;
-        int enemyWeapon = 2;
-        int armor = 5;
-        int health = 10;
-        BattleControl instance = new BattleControl();
-        int expResult = 8;
-        int result = instance.enemyDamage(enemyAT, enemyWeapon, armor, health);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         
@@ -91,12 +72,13 @@ public class BattleControlTest implements Serializable {
     @Test
     public void testDamageToCharacter() {
         System.out.println("damageToCharacter");
-        int enemyAT = 3;
-        int armor = 5;
-        int health = 10;
+        int enemyAT = 0;
+        int enemyWeapon = 0;
+        int armor = 0;
+        int health = 0;
         BattleControl instance = new BattleControl();
-        int expResult = 12;
-        int result = instance.damageToCharacter(enemyAT, armor, health);
+        int expResult = 0;
+        int result = instance.damageToCharacter(enemyAT, enemyWeapon, armor, health);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         
