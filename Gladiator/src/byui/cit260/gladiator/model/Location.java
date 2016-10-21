@@ -15,47 +15,47 @@ import java.util.Objects;
 public class Location implements Serializable {
     
     //class instance variables
-    private String room;
-    private String floor;
+    private int room;
+    private int floor;
     private String north;
     private String east;
     private String south;
     private String west;
-    private String row;
-    private String column;
+    private int row;
+    private int column;
     
     public Location (){
     }
     
-    public String getRow() {
+    public int getRow() {
         return row;
     }
     
-    public void setRow(String row) {
+    public void setRow(int row) {
         this.row = row;
     }
     
-    public String getColumn() {
+    public int getColumn() {
         return column;
     }
     
-    public void setColumn () {
+    public void setColumn (int column) {
         this.column = column;
     }
 
-    public String getRoom() {
+    public int getRoom() {
         return room;
     }
 
-    public void setRoom(String room) {
+    public void setRoom(int room) {
         this.room = room;
     }
 
-    public String getFloor() {
+    public int getFloor() {
         return floor;
     }
 
-    public void setFloor(String floor) {
+    public void setFloor(int floor) {
         this.floor = floor;
     }
 

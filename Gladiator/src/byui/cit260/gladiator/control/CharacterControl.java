@@ -10,5 +10,5 @@ package byui.cit260.gladiator.control;
  * @author David
  */
 public class CharacterControl {
-    
+
 }
