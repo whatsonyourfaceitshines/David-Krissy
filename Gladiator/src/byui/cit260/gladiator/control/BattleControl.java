@@ -24,13 +24,10 @@ public class BattleControl implements Serializable {
         int damage = characterAT + weapon - enemyArmor;
         return damage;
     }
-    public int enemyDamage (int enemyAT, int enemyWeapon, int armor, int health){
+    public int damageToCharacter (int enemyAT, int enemyWeapon, int armor, int health){
         int newHealth = health - (armor - (enemyAT + enemyWeapon));
         return newHealth;
     }
-    public int damageToCharacter (int enemyAT, int armor, int health){
-        int characterDamage = enemyAT - armor;
-        return characterDamage;}
     
     //Since we need at least 3 complex equations, the battle one will count as one, I was thinking about having a locked door that 
     //the key to was distroyed (because of the escaped Gladiator) and the character needs to find a strong sword, maybe a shield too,

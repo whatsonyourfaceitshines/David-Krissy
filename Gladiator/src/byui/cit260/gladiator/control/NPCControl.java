@@ -12,5 +12,5 @@ import java.io.Serializable;
  * @author Krissy
  */
 public class NPCControl implements Serializable {
-    public void npcStateUpdate (void currentState);
+    
 }

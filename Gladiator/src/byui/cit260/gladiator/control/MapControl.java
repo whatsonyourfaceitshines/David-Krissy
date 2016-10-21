@@ -12,6 +12,9 @@ import java.io.Serializable;
  * @author Krissy
  */
 public class MapControl implements Serializable {
-    public void move
-    public boolean validLocation (row, column);
+    public int location (int row, int column){
+        int location = row + column;
+        return location;
+    }
+        
 }
