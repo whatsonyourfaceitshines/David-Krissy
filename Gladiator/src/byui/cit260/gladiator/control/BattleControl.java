@@ -35,4 +35,9 @@ public class BattleControl implements Serializable {
     //I don't know if that will work considering the fact that it is very similar to the complex equation for battles...
     //Another equation could be that the door is a puzzle. Like there is a weight sensitive plate in the room that 1 of 3 barrels
     //in the room will weight enough to keep the plate down.
+    
+    //Yeah, complex equations will be easy. A puzzle involving weight will easily handle 2 operators minimum. We'll get there when
+    //we develop the View layer this upcoming week. Another way to easily cause a complex equation to take place is to give bosses
+    //special attacks, like "FURY!" damage = (regularAttack * 1.5) - (playerArmor * .75) With keeping ints, it should round all values
+    //to the nearest whole number... If not, we can always store as doubles and convert back to int or something.
 }

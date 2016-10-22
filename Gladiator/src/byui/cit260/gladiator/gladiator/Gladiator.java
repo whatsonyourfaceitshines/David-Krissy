@@ -11,6 +11,8 @@ import byui.cit260.gladiator.model.Items;
 import byui.cit260.gladiator.model.Location;
 import byui.cit260.gladiator.model.NPC;
 import byui.cit260.gladiator.control.GameControl;
+import java.io.File;
+import java.io.IOException;
 
 /**
  *
@@ -20,8 +22,9 @@ public class Gladiator {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         // test Location class
         Location locationVariables = new Location();
@@ -39,25 +42,25 @@ public class Gladiator {
         System.out.println(gameVariables.toString());
         
         // test CharacterInfo class
-        CharacterInfo testChara = new CharacterInfo();
+        CharacterInfo player = new CharacterInfo();
         
-        testChara.setName("Mr. Tibbs");
-        testChara.setGender(1);
-        testChara.setHomeCountry("Texas");
-        testChara.setCoordinates("2, 10");
-        testChara.setStatus("Great!");
+        player.setName("Mr. Tibbs");
+        player.setGender(1);
+        player.setHomeCountry("Texas");
+        player.setCoordinates("2, 10");
+        player.setStatus("Great!");
         
-        System.out.println(testChara.toString());
+        System.out.println(player.toString());
         
         // test Items class
-        Items testItem = new Items();
+        Items playerItems = new Items();
         
-        testItem.setWeapon("Sword");
-        testItem.setArmor("Iron");
-        testItem.setRestore("Rainbow Sauce");
-        testItem.setMisc("Saxaphone");
+        playerItems.setWeapon("Sword");
+        playerItems.setArmor("Iron");
+        playerItems.setRestore("Rainbow Sauce");
+        playerItems.setMisc("Saxaphone");
         
-        System.out.println(testItem.toString());
+        System.out.println(playerItems.toString());
         
         // Test GameControl class
         GameControl controlGame = new GameControl();
@@ -94,19 +97,20 @@ public class Gladiator {
         System.out.println(gameVariables.toString());
         
         // Test saveGame function
-        CharacterInfo player = new CharacterInfo();
+        new File("C:\\GladiatorSaves").mkdirs();
+        
+        // player is CharacterInfo instance currently
         
         // gameVariables is Game instance currently
         
-        Items playerItems = new Items();
+        // playerItems is Items instance currently
         
-        Location playerLocation = new Location();
+        // locationVariables is Location instance currently
         
-        NPC npcMark = new NPC();
+        controlGame.saveGame(player, gameVariables, playerItems);
         
-        NPC npcJudy = new NPC();
-        
-        NPC npcDavid = new NPC();
+        // Test loadGame function
+        controlGame.loadGame(player, gameVariables, playerItems);
     }
     
 }
