@@ -21,6 +21,8 @@ public class Game implements Serializable {
     public Game() {
     }
     
+    
+    
     public int getMainQuestProgress() {
         return mainQuestProgress;
     }
