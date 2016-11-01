@@ -5,7 +5,7 @@ package byui.cit260.gladiator.gladiator;
  * and open the template in the editor.
  */
 
-import byui.cit260.gladiator.model.CharacterInfo;
+import byui.cit260.gladiator.model.Player;
 import byui.cit260.gladiator.model.Game;
 import byui.cit260.gladiator.model.Items;
 import byui.cit260.gladiator.model.Location;
@@ -21,10 +21,25 @@ import java.io.IOException;
  */
 public class Gladiator {
 
-    /**
-     * @param args the command line arguments
-     * @throws java.io.IOException
-     */
+    private static Player player = null;
+    private static Game currentGame = null;
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Gladiator.player = player;
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        Gladiator.currentGame = currentGame;
+    }
+    
     public static void main(String[] args) throws IOException {
         
         // Display the start program view

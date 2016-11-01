@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.gladiator.control;
-
-import java.io.Serializable;
+package byui.cit260.gladiator.view;
 
 /**
  *
  * @author David
  */
-public class CharacterControl implements Serializable{
+public class MainMenuView {
 
-    public CharacterControl() {
+    void displayMainMenuView() {
+        System.out.println("\n*** displayMenu() function called ***");
     }
     
 }

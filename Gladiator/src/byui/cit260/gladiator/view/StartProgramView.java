@@ -5,6 +5,8 @@
  */
 package byui.cit260.gladiator.view;
 
+import byui.cit260.gladiator.control.GameControl;
+import byui.cit260.gladiator.model.Player;
 import java.util.Scanner;
 
 /**
@@ -13,8 +15,12 @@ import java.util.Scanner;
  */
 public class StartProgramView {
     private String promptMessage;
-    
-    public void StartProgramView() {
+
+    public StartProgramView() {
+        this.promptMessage = "\nPlease enter your name: ";
+        
+        this.displayBanner();
+
     }
 
     private void displayBanner() {
@@ -31,12 +37,9 @@ public class StartProgramView {
          do requested action and display the next view 
        while the view is not done
         END */
-       
-       this.promptMessage = "\nPlease enter your name: ";
-       
+              
        boolean done = false;
        do {
-           this.displayBanner();
            
            String playersName = this.getPlayersName();
            if (playersName.toUpperCase().equals("Q"))
@@ -71,8 +74,56 @@ public class StartProgramView {
     }
 
     private boolean doAction(String playersName) {
-        System.out.println("\n*** doAction() called ***");
+       // doAction(playersName): boolean 
+       // BEGIN 
+           // if the length of the playersName < 2 then 
+               // display “Invalid name: The name must be > 1 character” 
+               // return false 
+                        
+           // create Player with specified name 
+           // if unsuccessful then 
+               // display “Invalid name: The name is too short” 
+               // return false 
+                        
+           // display customized welcome message 
+           // display mainMenuView 
+           // return true 
+       // END
+        
+        if (playersName.length() < 2) {
+            System.out.println("\nInvalid player name: "
+                    + "The name must be greater than one character in length");
+        }
+        
+        // call createPlayer() control function
+        Player player = GameControl.createPlayer(playersName);
+        
+        if (player == null) { // if unsuccessful
+            System.out.println("\nError creating the player.");
+            return false;
+        }
+        
+        // display next view
+        this.displayNextView(player);
+        
         return true;
+    }
+
+    private void displayNextView(Player player) {
+        
+        // display a custom welcome message
+        System.out.println("\n====================================="
+                          + "\n Welcome to the game " + player.getName()
+                          + "\n We hope you enjoy the fruits of our"
+                          + "\n soul-crushing labor!"
+                          + "\n===================================="
+                          );
+        
+        // Create MainMenuView object
+        MainMenuView mainMenuView = new MainMenuView();
+        
+        // Display the main menu view
+        mainMenuView.displayMainMenuView();
     }
     
 }

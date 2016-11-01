@@ -5,9 +5,10 @@
  */
 package byui.cit260.gladiator.control;
 
+import byui.cit260.gladiator.gladiator.Gladiator;
 import byui.cit260.gladiator.model.Game;
 import java.io.Serializable;
-import byui.cit260.gladiator.model.CharacterInfo;
+import byui.cit260.gladiator.model.Player;
 import byui.cit260.gladiator.model.Items;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -20,6 +21,20 @@ import java.util.Scanner;
  * @author David
  */
 public class GameControl implements Serializable {
+
+    public static Player createPlayer(String playersName) {
+        
+        if (playersName == null) {
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(playersName);
+        
+        Gladiator.setPlayer(player); // save the player
+        
+        return player;
+    }
     
     // I. AM. CONSTRUCTOOOOOR!!!!
     public GameControl() {
@@ -49,7 +64,7 @@ public class GameControl implements Serializable {
     // Can't determine how to write or form a startNewGame function right now.
     // Can't determine how to write or form a quitGame function right now.
     
-    public void saveGame(CharacterInfo player, Game gameVariables, Items playerItems) throws IOException {
+    public void saveGame(Player player, Game gameVariables, Items playerItems) throws IOException {
         System.out.println("Save File Name?");
         
         Scanner scan = new Scanner(System.in);
@@ -88,7 +103,7 @@ public class GameControl implements Serializable {
         writeSave.close();
     }
     
-    public void loadGame(CharacterInfo player, Game gameVariables, Items playerItems) throws IOException {
+    public void loadGame(Player player, Game gameVariables, Items playerItems) throws IOException {
         System.out.println("Load File Name?");
         
         Scanner scan = new Scanner(System.in);

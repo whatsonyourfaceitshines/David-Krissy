@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author David
  */
-public class CharacterInfo implements Serializable {
+public class Player implements Serializable {
     
     // class instance variables
     private String name;
@@ -21,10 +21,7 @@ public class CharacterInfo implements Serializable {
     private String coordinates;
     private String status;
 
-    /**
-     *
-     */
-    public CharacterInfo() {
+    public Player() {
     }
 
     public String getName() {
@@ -89,7 +86,7 @@ public class CharacterInfo implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final CharacterInfo other = (CharacterInfo) obj;
+        final Player other = (Player) obj;
         if (this.gender != other.gender) {
             return false;
         }
